@@ -1,11 +1,16 @@
-import { Button } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import React, { useState } from "react";
+import BlogDetails from "./blog/BlogDetails";
 
 
 export default function App(){
 
     return <>
-    <h1>hi there</h1>
+        <Container maxWidth="md">
+            <BlogDetails />
+        </Container>
+
+        {/* <h1>hi there</h1> */}
          {/* <Nav/>     */}
          {/* <Routes>
             <Route path="/">
