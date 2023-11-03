@@ -1,16 +1,21 @@
-import { Button, Container } from "@mui/material";
+import { Button, Container, ThemeProvider } from "@mui/material";
 import React, { useState } from "react";
 import BlogDetails from "./blog/BlogDetails";
 import TestReusableButton from "./components/TestReusableButton";
+import BlogPost from "./blog/BlogPost";
+import { theme } from "./Theme";
 
 
 export default function App(){
 
     return <>
-        <Container maxWidth="md">
-            {/* <BlogDetails /> */}
-            <TestReusableButton sx={{p:3} } disableRipple> Button</TestReusableButton>
-        </Container>
+        <ThemeProvider theme={theme}>
+            <Container maxWidth="md">
+                {/* <BlogDetails /> */}
+                <BlogPost />
+            </Container>
+        </ThemeProvider>
+
 
         {/* <h1>hi there</h1> */}
          {/* <Nav/>     */}
