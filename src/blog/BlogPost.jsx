@@ -27,7 +27,7 @@ export default function BlogPost(){
         <Typography variant="h6" fontWeight={"bold"} fontSize={"1.125rem"} color={"rgb(42, 53, 71)"} marginBottom={2}>Early Black Friday Amazon deals: cheap TVs, headphones, laptops</Typography>
         <Stack direction={"row"} justifyContent={"start"} alignItems={"center"} spacing={1} >
             <CalendarMonthIcon/>
-            <Typography variant="body1"  fontSize={"0.875rem"} color={"rgb(42, 53, 71)"} fontWeight={400}  >Nov, 11, 2023</Typography>
+            <Typography variant="body1"  fontSize={"0.775rem"} color={"rgb(42, 53, 71)"} fontWeight={400}  >Nov, 11, 2023</Typography>
         </Stack>
       </CardContent>
 
