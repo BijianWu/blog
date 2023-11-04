@@ -23,7 +23,7 @@ export default function BlogPost(){
         title="open book"
       />
       <CardContent sx={{ p: 4 }}>
-        <Chip label="programming" sx={{ marginTop: -1,  marginBottom: 2, fontSize: "13px", color: "rgb(42, 53, 71)", fontWeight:"600" }}  />
+        <Chip label="programming" sx={{ height:"24px",  marginTop: -1,  marginBottom: 2,  color: "rgb(42, 53, 71)", fontWeight:"600", display: "inline-flex", alignItems: "center", justifyContent: "center", '& .MuiChip-label': {paddingLeft: 1, paddingRight: 1, fontSize: "12px", height: "18px", verticalAlign: "center"}}}  />
         <Typography variant="h6" fontWeight={"bold"} fontSize={"1.125rem"} color={"rgb(42, 53, 71)"} marginBottom={2}>Early Black Friday Amazon deals: cheap TVs, headphones, laptops</Typography>
         <Stack direction={"row"} justifyContent={"start"} alignItems={"center"} spacing={1} >
             <CalendarMonthIcon/>
