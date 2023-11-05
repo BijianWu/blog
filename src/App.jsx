@@ -4,15 +4,16 @@ import BlogDetails from "./blog/BlogDetails";
 import TestReusableButton from "./components/TestReusableButton";
 import BlogPost from "./blog/BlogPost";
 import { theme } from "./Theme";
+import BlogPosts from "./blog/BlogPosts";
 
 
 export default function App(){
 
     return <>
         <ThemeProvider theme={theme}>
-            <Container maxWidth="md">
+            <Container maxWidth="lg">
                 {/* <BlogDetails /> */}
-                <BlogPost />
+                <BlogPosts />
             </Container>
         </ThemeProvider>
 
