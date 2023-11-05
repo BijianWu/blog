@@ -1,9 +1,10 @@
-import { AppBar, Box, Container, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Breadcrumbs, Container, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const drawerWidth = 240;
 
@@ -46,78 +47,106 @@ export default function Layout(props){
         </List>
       </div>
     );
-  
+    function handleClick(event) {
+        event.preventDefault();
+        console.info('You clicked a breadcrumb.');
+      }
+
     const container = window !== undefined ? () => window().document.body : undefined;
+    const breadcrumbs = [
+        // <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+        //   MUI
+        // </Link>,
+        // <Link
+        //   underline="hover"
+        //   key="2"
+        //   color="inherit"
+        //   href="/material-ui/getting-started/installation/"
+        //   onClick={handleClick}
+        // >
+        //   Core
+        // </Link>,
+        <Typography key="3" color="text.primary">
+          Home
+        </Typography>,
+      ];
 
     return <>
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar
-        elevation={0}
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-          bgcolor: "rgb(255, 255, 255)"
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="black"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography color={"black"} variant="h6" noWrap component="div">
-            Responsive drawer
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
+        <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <AppBar
+            elevation={0}
+            position="fixed"
+            sx={{
+            width: { sm: `calc(100% - ${drawerWidth}px)` },
+            ml: { sm: `${drawerWidth}px` },
+            bgcolor: "rgb(255, 255, 255)"
+            }}
         >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-          open
+            <Toolbar>
+            <IconButton
+                color="black"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+                <MenuIcon />
+            </IconButton>
+            {/* <Typography color={"black"} variant="h6" noWrap component="div">
+                Responsive drawer
+            </Typography> */}
+
+            <Breadcrumbs
+                separator={<NavigateNextIcon fontSize="small" />}
+                aria-label="breadcrumb"
+            >
+                {breadcrumbs}
+            </Breadcrumbs>
+            </Toolbar>
+        </AppBar>
+        <Box
+            component="nav"
+            sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+            aria-label="mailbox folders"
         >
-          {drawer}
-        </Drawer>
-      </Box>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-      >
-        <Toolbar />
-        <Container maxWidth="lg">
-            <Outlet />
-        </Container>
-      </Box>
-    </Box>
+            {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+            <Drawer
+            container={container}
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+            }}
+            sx={{
+                display: { xs: 'block', sm: 'none' },
+                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            }}
+            >
+            {drawer}
+            </Drawer>
+            <Drawer
+            variant="permanent"
+            sx={{
+                display: { xs: 'none', sm: 'block' },
+                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            }}
+            open
+            >
+            {drawer}
+            </Drawer>
+        </Box>
+        <Box
+            component="main"
+            sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        >
+            <Toolbar />
+            <Container maxWidth="lg">
+                <Outlet />
+            </Container>
+        </Box>
+        </Box>
 
 
         {/* <h1>hi there</h1> */}
