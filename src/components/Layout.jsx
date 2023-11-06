@@ -1,10 +1,15 @@
-import { AppBar, Box, Breadcrumbs, Container, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar, Box, Breadcrumbs, Container, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import HomeIcon from '@mui/icons-material/Home';
+import SellIcon from '@mui/icons-material/Sell';
+import ArticleIcon from '@mui/icons-material/Article';
+import InfoIcon from '@mui/icons-material/Info';
+import ContactsIcon from '@mui/icons-material/Contacts';
 
 const drawerWidth = 240;
 
@@ -18,33 +23,64 @@ export default function Layout(props){
   
     const drawer = (
       <div>
-        <Toolbar />
-        <Divider />
+        {/* <Toolbar /> */}
+        <Stack justifyContent={"center"} spacing={1} alignItems={"center"} paddingTop={4} paddingBottom={2}>
+          <Avatar alt="Remy Sharp"  sx={{ width: 100, height: 100, marginBottom: 1 }} src={require("../assets/images/bijian-wu.jpg")}/>
+          <Typography color={"rgba(0, 0, 0, 0.87)"} variant="h6">Bijian Wu </Typography>
+          <Typography color={"rgba(0, 0, 0, 0.87)"} variant="body1" paragraph>A full-stack developer's blog </Typography>
+        </Stack>
+
+        {/* <Divider /> */}
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding>
+          {/* {['Home', 'Tags', 'Archives', 'About', 'Contact'].map((text, index) => (
+
+          ))} */}
+          <ListItem key={"Home"} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  <HomeIcon />
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText primary={'Home'} />
               </ListItemButton>
             </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding>
+
+            <ListItem key={"Tags"} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  <SellIcon />
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText primary={'Tags'} />
               </ListItemButton>
             </ListItem>
-          ))}
+
+            <ListItem key={"Archives"} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <ArticleIcon />
+                </ListItemIcon>
+                <ListItemText primary={'Archives'} />
+              </ListItemButton>
+            </ListItem>
+
+            <ListItem key={"About"} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <InfoIcon />
+                </ListItemIcon>
+                <ListItemText primary={'About'} />
+              </ListItemButton>
+            </ListItem>
+
+            <ListItem key={"Contact"} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <ContactsIcon />
+                </ListItemIcon>
+                <ListItemText primary={'Contact'} />
+              </ListItemButton>
+            </ListItem>
         </List>
+
       </div>
     );
     function handleClick(event) {
