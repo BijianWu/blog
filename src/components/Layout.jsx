@@ -17,7 +17,7 @@ const drawerWidth = 240;
 export default function Layout(props){
     const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false);
-  
+    const [selected, setSelected] = useState(-1);
     const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
     };
@@ -44,6 +44,12 @@ export default function Layout(props){
             color: blue[400],
           },
         },
+        '& .MuiListItemButton-root:focus': {
+          bgcolor: blue["A200"],
+          '&, & .MuiListItemIcon-root': {
+            color: 'white',
+          },
+        },
         '&& .Mui-selected, && .Mui-selected:hover': {
           bgcolor: blue["A200"],
           '&, & .MuiListItemIcon-root': {
@@ -60,7 +66,7 @@ export default function Layout(props){
           {/* {['Home', 'Tags', 'Archives', 'About', 'Contact'].map((text, index) => (
 
           ))} */}
-          <ListItem  key={"Home"} disablePadding>
+          <ListItem  key={"Home"} disablePadding selected={selected === 0} onClick={(e) => setSelected(0)}>
               <ListItemButton >
                 <ListItemIcon >
                   <HomeIcon />
@@ -69,7 +75,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Tags"} disablePadding>
+            <ListItem key={"Tags"} disablePadding selected={selected === 1} onClick={(e) => setSelected(1)}>
               <ListItemButton>
                 <ListItemIcon>
                   <SellIcon />
@@ -78,7 +84,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Archives"} disablePadding>
+            <ListItem key={"Archives"} disablePadding selected={selected === 2} onClick={(e) => setSelected(2)}>
               <ListItemButton>
                 <ListItemIcon>
                   <ArticleIcon />
@@ -87,7 +93,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"About"} disablePadding>
+            <ListItem key={"About"} disablePadding selected={selected === 3} onClick={(e) => setSelected(3)}>
               <ListItemButton>
                 <ListItemIcon>
                   <InfoIcon />
@@ -96,7 +102,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Contact"} disablePadding selected={true} >
+            <ListItem key={"Contact"} disablePadding selected={selected === 4} onClick={(e) => setSelected(4)} >
               <ListItemButton>
                 <ListItemIcon>
                   <ContactsIcon />
