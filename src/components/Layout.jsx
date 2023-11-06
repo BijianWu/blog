@@ -1,6 +1,6 @@
 import { AppBar, Avatar, Box, Breadcrumbs, Container, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, MenuItem, Stack, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -18,10 +18,29 @@ export default function Layout(props){
     const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false);
     const [selected, setSelected] = useState(-1);
+    const navigate = useNavigate();
+
     const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
     };
   
+    const onSelected = (index) => {
+      if(index !== selected){
+        setSelected(index);
+        if(index === 0){
+          navigate("/");
+        } else if(index === 1){
+          navigate("/tags");
+        } else if(index === 2){
+          navigate("/archives");
+        } else if(index === 3){
+          navigate("/about");
+        } else if(index === 4){
+          navigate("/contact");
+        }
+      }
+    }
+
     const drawer = (
       <div>
         {/* <Toolbar /> */}
@@ -66,7 +85,7 @@ export default function Layout(props){
           {/* {['Home', 'Tags', 'Archives', 'About', 'Contact'].map((text, index) => (
 
           ))} */}
-          <ListItem  key={"Home"} disablePadding selected={selected === 0} onClick={(e) => setSelected(0)}>
+          <ListItem  key={"Home"} disablePadding selected={selected === 0} onClick={(e) => onSelected(0)}>
               <ListItemButton >
                 <ListItemIcon >
                   <HomeIcon />
@@ -75,7 +94,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Tags"} disablePadding selected={selected === 1} onClick={(e) => setSelected(1)}>
+            <ListItem key={"Tags"} disablePadding selected={selected === 1} onClick={(e) => onSelected(1)}>
               <ListItemButton>
                 <ListItemIcon>
                   <SellIcon />
@@ -84,7 +103,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Archives"} disablePadding selected={selected === 2} onClick={(e) => setSelected(2)}>
+            <ListItem key={"Archives"} disablePadding selected={selected === 2} onClick={(e) => onSelected(2)}>
               <ListItemButton>
                 <ListItemIcon>
                   <ArticleIcon />
@@ -93,7 +112,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"About"} disablePadding selected={selected === 3} onClick={(e) => setSelected(3)}>
+            <ListItem key={"About"} disablePadding selected={selected === 3} onClick={(e) => onSelected(3)}>
               <ListItemButton>
                 <ListItemIcon>
                   <InfoIcon />
@@ -102,7 +121,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Contact"} disablePadding selected={selected === 4} onClick={(e) => setSelected(4)} >
+            <ListItem key={"Contact"} disablePadding selected={selected === 4} onClick={(e) => onSelected(4)} >
               <ListItemButton>
                 <ListItemIcon>
                   <ContactsIcon />
