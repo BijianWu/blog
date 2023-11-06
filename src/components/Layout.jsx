@@ -36,12 +36,7 @@ export default function Layout(props){
           p:2,
 
         // selected and (selected + hover) states
-        '&& .Mui-selected, && .Mui-selected:hover': {
-          bgcolor: blue["A200"],
-          '&, & .MuiListItemIcon-root': {
-            color: 'white',
-          },
-        },
+
         // hover states
         '& .MuiListItemButton-root:hover': {
           bgcolor: blue[50],
@@ -49,7 +44,12 @@ export default function Layout(props){
             color: blue[400],
           },
         },
-
+        '&& .Mui-selected, && .Mui-selected:hover': {
+          bgcolor: blue["A200"],
+          '&, & .MuiListItemIcon-root': {
+            color: 'white',
+          },
+        },
         // '& .Mui-selected:selected': {
         //   bgcolor: "red",
         //   '&, & .MuiListItemIcon-root': {
