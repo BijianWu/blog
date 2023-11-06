@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Box, Breadcrumbs, Container, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar, Box, Breadcrumbs, Container, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, MenuItem, Stack, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import InboxIcon from '@mui/icons-material/MoveToInbox';
@@ -10,6 +10,7 @@ import SellIcon from '@mui/icons-material/Sell';
 import ArticleIcon from '@mui/icons-material/Article';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactsIcon from '@mui/icons-material/Contacts';
+import { blue } from "@mui/material/colors";
 
 const drawerWidth = 240;
 
@@ -31,13 +32,37 @@ export default function Layout(props){
         </Stack>
 
         {/* <Divider /> */}
-        <List>
+        <List   sx={{
+          p:2,
+
+        // selected and (selected + hover) states
+        '&& .Mui-selected, && .Mui-selected:hover': {
+          bgcolor: blue["A200"],
+          '&, & .MuiListItemIcon-root': {
+            color: 'white',
+          },
+        },
+        // hover states
+        '& .MuiListItemButton-root:hover': {
+          bgcolor: blue[50],
+          '&, & .MuiListItemIcon-root': {
+            color: blue[400],
+          },
+        },
+
+        // '& .Mui-selected:selected': {
+        //   bgcolor: "red",
+        //   '&, & .MuiListItemIcon-root': {
+        //     color: blue[400],
+        //   },
+        // },
+      }}>
           {/* {['Home', 'Tags', 'Archives', 'About', 'Contact'].map((text, index) => (
 
           ))} */}
-          <ListItem key={"Home"} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
+          <ListItem  key={"Home"} disablePadding>
+              <ListItemButton >
+                <ListItemIcon >
                   <HomeIcon />
                 </ListItemIcon>
                 <ListItemText primary={'Home'} />
@@ -71,7 +96,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Contact"} disablePadding>
+            <ListItem key={"Contact"} disablePadding selected={true} >
               <ListItemButton>
                 <ListItemIcon>
                   <ContactsIcon />
