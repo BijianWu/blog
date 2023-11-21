@@ -13,6 +13,7 @@ import ContactsIcon from '@mui/icons-material/Contacts';
 import { blue } from "@mui/material/colors";
 
 const drawerWidth = 240;
+const navButtonRadius = 2;
 
 export default function Layout(props){
     const { window } = props;
@@ -85,8 +86,8 @@ export default function Layout(props){
           {/* {['Home', 'Tags', 'Archives', 'About', 'Contact'].map((text, index) => (
 
           ))} */}
-          <ListItem  key={"Home"} sx={{ borderRadius: 1 }} disablePadding selected={selected === 0} onClick={(e) => onSelected(0)}>
-              <ListItemButton sx={{ borderRadius: 1 }}>
+          <ListItem  key={"Home"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={selected === 0} onClick={(e) => onSelected(0)}>
+              <ListItemButton sx={{ borderRadius: navButtonRadius }}>
                 <ListItemIcon >
                   <HomeIcon />
                 </ListItemIcon>
@@ -94,8 +95,8 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Tags"} sx={{ borderRadius: 1 }} disablePadding selected={selected === 1} onClick={(e) => onSelected(1)}>
-              <ListItemButton sx={{ borderRadius: 1 }}>
+            <ListItem key={"Tags"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={selected === 1} onClick={(e) => onSelected(1)}>
+              <ListItemButton sx={{ borderRadius: navButtonRadius }}>
                 <ListItemIcon>
                   <SellIcon />
                 </ListItemIcon>
@@ -103,8 +104,8 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Archives"} sx={{ borderRadius: 1 }} disablePadding selected={selected === 2} onClick={(e) => onSelected(2)}>
-              <ListItemButton sx={{ borderRadius: 1 }}>
+            <ListItem key={"Archives"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={selected === 2} onClick={(e) => onSelected(2)}>
+              <ListItemButton sx={{ borderRadius: navButtonRadius }}>
                 <ListItemIcon>
                   <ArticleIcon />
                 </ListItemIcon>
@@ -112,8 +113,8 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"About"} sx={{ borderRadius: 1 }} disablePadding selected={selected === 3} onClick={(e) => onSelected(3)}>
-              <ListItemButton sx={{ borderRadius: 1 }}>
+            <ListItem key={"About"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={selected === 3} onClick={(e) => onSelected(3)}>
+              <ListItemButton sx={{ borderRadius: navButtonRadius }}>
                 <ListItemIcon>
                   <InfoIcon />
                 </ListItemIcon>
@@ -121,8 +122,8 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Contact"} sx={{ borderRadius: 1 }} disablePadding selected={selected === 4} onClick={(e) => onSelected(4)} >
-              <ListItemButton sx={{ borderRadius: 1 }}>
+            <ListItem key={"Contact"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={selected === 4} onClick={(e) => onSelected(4)} >
+              <ListItemButton sx={{ borderRadius: navButtonRadius }}>
                 <ListItemIcon>
                   <ContactsIcon />
                 </ListItemIcon>
