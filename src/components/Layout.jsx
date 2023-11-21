@@ -53,7 +53,7 @@ export default function Layout(props){
         {/* <Divider /> */}
         <List   sx={{
           p:2,
-
+          // borderRadius: 10,
         // selected and (selected + hover) states
 
         // hover states
@@ -85,8 +85,8 @@ export default function Layout(props){
           {/* {['Home', 'Tags', 'Archives', 'About', 'Contact'].map((text, index) => (
 
           ))} */}
-          <ListItem  key={"Home"} disablePadding selected={selected === 0} onClick={(e) => onSelected(0)}>
-              <ListItemButton >
+          <ListItem  key={"Home"} sx={{ borderRadius: 1 }} disablePadding selected={selected === 0} onClick={(e) => onSelected(0)}>
+              <ListItemButton sx={{ borderRadius: 1 }}>
                 <ListItemIcon >
                   <HomeIcon />
                 </ListItemIcon>
@@ -94,8 +94,8 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Tags"} disablePadding selected={selected === 1} onClick={(e) => onSelected(1)}>
-              <ListItemButton>
+            <ListItem key={"Tags"} sx={{ borderRadius: 1 }} disablePadding selected={selected === 1} onClick={(e) => onSelected(1)}>
+              <ListItemButton sx={{ borderRadius: 1 }}>
                 <ListItemIcon>
                   <SellIcon />
                 </ListItemIcon>
@@ -103,8 +103,8 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Archives"} disablePadding selected={selected === 2} onClick={(e) => onSelected(2)}>
-              <ListItemButton>
+            <ListItem key={"Archives"} sx={{ borderRadius: 1 }} disablePadding selected={selected === 2} onClick={(e) => onSelected(2)}>
+              <ListItemButton sx={{ borderRadius: 1 }}>
                 <ListItemIcon>
                   <ArticleIcon />
                 </ListItemIcon>
@@ -112,8 +112,8 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"About"} disablePadding selected={selected === 3} onClick={(e) => onSelected(3)}>
-              <ListItemButton>
+            <ListItem key={"About"} sx={{ borderRadius: 1 }} disablePadding selected={selected === 3} onClick={(e) => onSelected(3)}>
+              <ListItemButton sx={{ borderRadius: 1 }}>
                 <ListItemIcon>
                   <InfoIcon />
                 </ListItemIcon>
@@ -121,8 +121,8 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Contact"} disablePadding selected={selected === 4} onClick={(e) => onSelected(4)} >
-              <ListItemButton>
+            <ListItem key={"Contact"} sx={{ borderRadius: 1 }} disablePadding selected={selected === 4} onClick={(e) => onSelected(4)} >
+              <ListItemButton sx={{ borderRadius: 1 }}>
                 <ListItemIcon>
                   <ContactsIcon />
                 </ListItemIcon>

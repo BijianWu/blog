@@ -6,13 +6,13 @@ import React, { useState } from "react";
 export default function BlogDetails(){
 
     return <>
-        <Paper sx={{ bgcolor: blue[50], py: 3, px: 3, mb: 4, borderRadius: "10px" }}>
+        <Paper sx={{ bgcolor: blue[50], py: 3, px: 3, mb: 4, borderRadius: 1 }}>
             <Typography variant="h5" fontWeight={"500"} marginBottom={"4px"}>Blog Detail</Typography>
             <Typography>Nav</Typography>
         </Paper>
 
         {/* // main section */}
-        <Paper sx={{  borderRadius: "10px" }} elevation={2}>
+        <Paper sx={{  borderRadius: 1 }} elevation={2}>
             <Box sx={{ py: 3, px: 3 }}>
                 <Typography variant="h4" fontWeight={"500"} marginBottom={"4px"}>Streaming video way before it was cool, go dark tomorrow</Typography>
                 <Typography>View 3201</Typography>
