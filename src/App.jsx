@@ -11,6 +11,8 @@ import Tags from "./pages/Tags";
 import Archives from "./pages/Archives";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import TagDetails from "./pages/TagDetails";
+import EmptyLayout from "./pages/EmptyLayout";
 
 export default function App(){
 
@@ -19,7 +21,10 @@ export default function App(){
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<BlogPosts/>} />
-                    <Route path="tags" element={<Tags/>} />
+                    <Route path="tags" element={<EmptyLayout />} >
+                        <Route index element={<Tags />} />
+                        <Route path=":tagName" element={<TagDetails />} />
+                    </Route>
                     <Route path="archives" element={<Archives/>} />
                     <Route path="about" element={<About/>} />
                     <Route path="contact" element={<Contact/>} />
