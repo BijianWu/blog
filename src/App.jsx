@@ -21,6 +21,7 @@ export default function App(){
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<BlogPosts/>} />
+                    <Route path="posts/:postTitle" element={<BlogDetails/>} />
                     <Route path="tags" element={<EmptyLayout />} >
                         <Route index element={<Tags />} />
                         <Route path=":tagName" element={<TagDetails />} />

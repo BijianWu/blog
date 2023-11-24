@@ -1,8 +1,10 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Chip, Container, Paper, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-export default function BlogPost(){
+import { useNavigate } from "react-router-dom";
 
+export default function BlogPost(){
+    const navigate = useNavigate();
     return <>
         {/* <Paper elevation={1}>
             <Chip label="primary"  />
@@ -16,7 +18,7 @@ export default function BlogPost(){
             
         </Paper> */}
 
-    <Card  elevation={1} sx={{ maxWidth: 360, borderRadius: 1, transition: "box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms", boxShadow: "rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px" }}>
+    <Card onClick={ () => navigate("posts/post-title") } elevation={1} sx={{ maxWidth: 360, borderRadius: 1, transition: "box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms", boxShadow: "rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px" }}>
       <CardMedia
         sx={{ height: 250 }}
         image={require("../assets/images/book-open.jpg")}

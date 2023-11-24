@@ -1,6 +1,6 @@
 import { AppBar, Avatar, Box, Breadcrumbs, Container, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, MenuItem, Stack, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -20,6 +20,9 @@ export default function Layout(props){
     const [mobileOpen, setMobileOpen] = useState(false);
     const [selected, setSelected] = useState(-1);
     const navigate = useNavigate();
+    const location = useLocation();
+    const { postTitle, tagName } = useParams();
+    console.log(location.pathname)
 
     const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
@@ -140,24 +143,113 @@ export default function Layout(props){
       }
 
     const container = window !== undefined ? () => window().document.body : undefined;
-    const breadcrumbs = [
-        // <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
-        //   MUI
-        // </Link>,
-        // <Link
-        //   underline="hover"
-        //   key="2"
-        //   color="inherit"
-        //   href="/material-ui/getting-started/installation/"
-        //   onClick={handleClick}
-        // >
-        //   Core
-        // </Link>,
-        <Typography key="3" color="text.primary">
+    // const breadcrumbs = [
+    //     // <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+    //     //   MUI
+    //     // </Link>,
+    //     // <Link
+    //     //   underline="hover"
+    //     //   key="2"
+    //     //   color="inherit"
+    //     //   href="/material-ui/getting-started/installation/"
+    //     //   onClick={handleClick}
+    //     // >
+    //     //   Core
+    //     // </Link>,
+    //     <Typography key="3" color="text.primary">
+    //       Home
+    //     </Typography>,
+    //   ];
+
+    const getBreadcrumbs = () => {
+      if(location.pathname.endsWith("tags")){
+        return [
+          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
           Home
+          </Link>,
+          <Typography key="3" color="text.primary">
+          Tags
+        </Typography>,
+        ]
+      } else if(location.pathname.endsWith("archives")){
+        return [
+          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          Home
+          </Link>,
+          <Typography key="3" color="text.primary">
+          Archives
+        </Typography>,
+        ]
+      } else if(location.pathname.endsWith("about")){
+        return [
+          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          Home
+          </Link>,
+          <Typography key="3" color="text.primary">
+          About
+        </Typography>,
+        ]
+      } else if(location.pathname.endsWith("contact")){
+        return [
+          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          Home
+          </Link>,
+          <Typography key="3" color="text.primary">
+          Contact
+        </Typography>,
+        ]
+      } else if(location.pathname.includes("posts")){
+        return [
+          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          Home
+          </Link>,
+          <Typography key="3" color="text.primary">
+          {postTitle}
+        </Typography>,
+        ]
+      }else if(location.pathname.includes("tags/")){
+        return [
+          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          Home
+          </Link>,
+          <Link
+            underline="hover"
+            key="2"
+            color="inherit"
+            href="/material-ui/getting-started/installation/"
+            onClick={handleClick}
+          >
+            Tags
+          </Link>,
+          <Typography key="3" color="text.primary">
+          {tagName}
+        </Typography>,
+        ]
+      }else {
+        return [
+          <Typography key="3" color="text.primary">
+          Home
+          </Typography>,
+        ]
+      }
+    }
+      const breadcrumbs = [
+        <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          Home
+        </Link>,
+        <Link
+          underline="hover"
+          key="2"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          onClick={handleClick}
+        >
+          Core
+        </Link>,
+        <Typography key="3" color="text.primary">
+          Breadcrumb
         </Typography>,
       ];
-
     return <>
         <Box sx={{ display: 'flex' }}>
         <CssBaseline />
@@ -185,10 +277,10 @@ export default function Layout(props){
             </Typography> */}
 
             <Breadcrumbs
-                separator={<NavigateNextIcon fontSize="small" />}
+                separator="›"
                 aria-label="breadcrumb"
             >
-                {breadcrumbs}
+                {getBreadcrumbs()}
             </Breadcrumbs>
             </Toolbar>
         </AppBar>
