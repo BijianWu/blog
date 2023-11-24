@@ -328,7 +328,7 @@ export default function Layout(props){
                 <Outlet />
             </Container>
             
-            <Box sx={{marginTop: "auto"}}>
+            <Box sx={{marginTop: "auto", py: 3}}>
               <Divider />
               <Typography paragraph my={2}>© {new Date().getFullYear()} Bijian Wu. Some rights reserved.</Typography>
             </Box>
