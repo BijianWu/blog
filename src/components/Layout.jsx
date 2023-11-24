@@ -229,9 +229,20 @@ export default function Layout(props){
             sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
         >
             <Toolbar />
+            <Stack  sx={{minHeight: "85vh"}}>
+
+
             <Container maxWidth="lg">
                 <Outlet />
             </Container>
+            
+            <Box sx={{marginTop: "auto"}}>
+              <Divider />
+              <Typography paragraph my={2}>© {new Date().getFullYear()} Bijian Wu. Some rights reserved.</Typography>
+            </Box>
+
+
+            </Stack>
         </Box>
         </Box>
 
