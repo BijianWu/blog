@@ -11,7 +11,8 @@ import ArticleIcon from '@mui/icons-material/Article';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import { blue } from "@mui/material/colors";
-
+import StyledTypography from "../components/StyledTypography";
+import StyledDisabledTypography from "./StyledDisabledTypography";
 const drawerWidth = 240;
 const navButtonRadius = 2;
 
@@ -164,55 +165,55 @@ export default function Layout(props){
     const getBreadcrumbs = () => {
       if(location.pathname.endsWith("tags")){
         return [
-          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography   underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
           Home
-          </Link>,
-          <Typography key="3" color="text.primary">
+          </StyledTypography>,
+          <StyledDisabledTypography key="3" color="text.primary">
           Tags
-        </Typography>,
+        </StyledDisabledTypography>,
         ]
       } else if(location.pathname.endsWith("archives")){
         return [
-          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography  underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
           Home
-          </Link>,
-          <Typography key="3" color="text.primary">
+          </StyledTypography>,
+          <StyledDisabledTypography key="3" color="text.primary">
           Archives
-        </Typography>,
+        </StyledDisabledTypography>,
         ]
       } else if(location.pathname.endsWith("about")){
         return [
-          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
           Home
-          </Link>,
-          <Typography key="3" color="text.primary">
+          </StyledTypography>,
+          <StyledDisabledTypography  key="3" color="text.primary">
           About
-        </Typography>,
+        </StyledDisabledTypography>,
         ]
       } else if(location.pathname.endsWith("contact")){
         return [
-          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
           Home
-          </Link>,
-          <Typography key="3" color="text.primary">
+          </StyledTypography>,
+          <StyledDisabledTypography key="3" color="text.primary">
           Contact
-        </Typography>,
+        </StyledDisabledTypography>,
         ]
       } else if(location.pathname.includes("posts")){
         return [
-          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
           Home
-          </Link>,
-          <Typography key="3" color="text.primary">
+          </StyledTypography>,
+          <StyledDisabledTypography key="3" color="text.primary">
           {postTitle}
-        </Typography>,
+        </StyledDisabledTypography>,
         ]
       }else if(location.pathname.includes("tags/")){
         return [
-          <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
           Home
-          </Link>,
-          <Link
+          </StyledTypography>,
+          <StyledTypography
             underline="hover"
             key="2"
             color="inherit"
@@ -220,36 +221,20 @@ export default function Layout(props){
             onClick={handleClick}
           >
             Tags
-          </Link>,
-          <Typography key="3" color="text.primary">
+          </StyledTypography>,
+          <StyledDisabledTypography key="3" color="text.primary">
           {tagName}
-        </Typography>,
+        </StyledDisabledTypography>,
         ]
       }else {
         return [
-          <Typography key="3" color="text.primary">
+          <StyledDisabledTypography key="3" color="text.primary">
           Home
-          </Typography>,
+          </StyledDisabledTypography>,
         ]
       }
     }
-      const breadcrumbs = [
-        <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
-          Home
-        </Link>,
-        <Link
-          underline="hover"
-          key="2"
-          color="inherit"
-          href="/material-ui/getting-started/installation/"
-          onClick={handleClick}
-        >
-          Core
-        </Link>,
-        <Typography key="3" color="text.primary">
-          Breadcrumb
-        </Typography>,
-      ];
+
     return <>
         <Box sx={{ display: 'flex' }}>
         <CssBaseline />
