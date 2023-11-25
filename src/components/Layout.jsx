@@ -165,7 +165,7 @@ export default function Layout(props){
     const getBreadcrumbs = () => {
       if(location.pathname.endsWith("tags")){
         return [
-          <StyledTypography   underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography   underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
           <StyledDisabledTypography key="3" color="text.primary">
@@ -174,7 +174,7 @@ export default function Layout(props){
         ]
       } else if(location.pathname.endsWith("archives")){
         return [
-          <StyledTypography  underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography  underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
           <StyledDisabledTypography key="3" color="text.primary">
@@ -183,7 +183,7 @@ export default function Layout(props){
         ]
       } else if(location.pathname.endsWith("about")){
         return [
-          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
           <StyledDisabledTypography  key="3" color="text.primary">
@@ -192,7 +192,7 @@ export default function Layout(props){
         ]
       } else if(location.pathname.endsWith("contact")){
         return [
-          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
           <StyledDisabledTypography key="3" color="text.primary">
@@ -201,7 +201,7 @@ export default function Layout(props){
         ]
       } else if(location.pathname.includes("posts")){
         return [
-          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography underline="hover" key="1" color="inherit" href="/"onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
           <StyledDisabledTypography key="3" color="text.primary">
@@ -210,15 +210,14 @@ export default function Layout(props){
         ]
       }else if(location.pathname.includes("tags/")){
         return [
-          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
           <StyledTypography
             underline="hover"
             key="2"
             color="inherit"
-            href="/material-ui/getting-started/installation/"
-            onClick={handleClick}
+            onClick={() => navigate("/tags")}
           >
             Tags
           </StyledTypography>,
