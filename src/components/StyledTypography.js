@@ -1,7 +1,7 @@
 import { Chip, Tab, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const StyledTypography = styled((props) => <Typography variant="outlined" size="small" sx={{ fontSize: 20 }} clickable {...props} />)(({ theme }) => ({
+const StyledTypography = styled((props) => <Typography variant="outlined" size="small" sx={{ fontSize: 20 }} {...props} />)(({ theme }) => ({
     fontWeight: theme.typography.fontWeightRegular,
     marginRight: theme.spacing(1),
     color: '#1976d2',
