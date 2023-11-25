@@ -237,37 +237,7 @@ export default function Layout(props){
     return <>
         <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar
-            elevation={0}
-            position="fixed"
-            sx={{
-            width: { sm: `calc(100% - ${drawerWidth}px)` },
-            ml: { sm: `${drawerWidth}px` },
-            bgcolor: "rgb(255, 255, 255)"
-            }}
-        >
-            <Toolbar>
-            <IconButton
-                color="black"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: 'none' } }}
-            >
-                <MenuIcon />
-            </IconButton>
-            {/* <Typography color={"black"} variant="h6" noWrap component="div">
-                Responsive drawer
-            </Typography> */}
 
-            <Breadcrumbs
-                separator="›"
-                aria-label="breadcrumb"
-            >
-                {getBreadcrumbs()}
-            </Breadcrumbs>
-            </Toolbar>
-        </AppBar>
         <Box
             component="nav"
             sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -304,9 +274,36 @@ export default function Layout(props){
             component="main"
             sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
         >
-            <Toolbar />
+            {/* <Toolbar /> */}
             <Stack  sx={{minHeight: "85vh"}}>
+            <Box
 
+            sx={{
+            bgcolor: "rgb(255, 255, 255)"
+            }}
+        >
+            <Toolbar sx= {{ alignItems: "start" }}>
+              <IconButton
+                  color="black"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{ mr: 2, pt: "3px", display: { sm: 'none' } }}
+              >
+                  <MenuIcon  />
+              </IconButton>
+              {/* <Typography color={"black"} variant="h6" noWrap component="div">
+                  Responsive drawer
+              </Typography> */}
+
+              <Breadcrumbs
+                  separator="›"
+                  aria-label="breadcrumb"
+              >
+                  {getBreadcrumbs()}
+              </Breadcrumbs>
+            </Toolbar>
+        </Box>
 
             <Container maxWidth="lg">
                 <Outlet />
