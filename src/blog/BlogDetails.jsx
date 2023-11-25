@@ -18,7 +18,7 @@ export default function BlogDetails(){
 
         {/* // main section */}
         <Paper sx={{  borderRadius: 3 }} elevation={2}>
-            <img style={{objectFit: "fill", minHeight: "200px", width: "100%", aspectRatio: 3, borderTopLeftRadius: 6, borderTopRightRadius: 6}} src={require("../assets/images/book-open.jpg")} alt=""/>
+            <img style={{objectFit: "fill", minHeight: "200px", width: "100%", aspectRatio: 2.5, borderTopLeftRadius: 6, borderTopRightRadius: 6}} src={require("../assets/images/book-open.jpg")} alt=""/>
             <Box sx={{ py: 3, px: 3 }}>
 
 
