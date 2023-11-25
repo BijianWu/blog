@@ -2,6 +2,8 @@ import { Button, Card, CardActions, CardContent, CardMedia, Chip, Container, Pap
 import React, { useState } from "react";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { useNavigate } from "react-router-dom";
+import StypedSmallChip from "../components/StypedSmallChip";
+import StypedDisplayOnlySmallChip from "../components/StypedDisplayOnlySmallChip";
 
 export default function BlogPost(){
     const navigate = useNavigate();
@@ -25,8 +27,10 @@ export default function BlogPost(){
         title="open book"
       />
       <CardContent sx={{ p: 4 }}>
-        <Chip label="programming" sx={{ height:"24px",  marginTop: -1,  marginBottom: 2,  color: "rgb(42, 53, 71)", fontWeight:"600", display: "inline-flex", alignItems: "center", justifyContent: "center", '& .MuiChip-label': {paddingLeft: 1, paddingRight: 1, fontSize: "12px", height: "18px", verticalAlign: "center"}}}  />
+        {/* <Chip label="programming" sx={{ height:"24px",  marginTop: -1,  marginBottom: 2,  color: "rgb(42, 53, 71)", fontWeight:"600", display: "inline-flex", alignItems: "center", justifyContent: "center", '& .MuiChip-label': {paddingLeft: 1, paddingRight: 1, fontSize: "12px", height: "18px", verticalAlign: "center"}}}  /> */}
+
         <Typography variant="h6" fontWeight={"bold"} fontSize={"1.125rem"} color={"rgb(42, 53, 71)"} marginBottom={2}>Early Black Friday Amazon deals: cheap TVs, headphones, laptops</Typography>
+        <StypedDisplayOnlySmallChip clickable={false} sx={{ height:"24px", marginTop: -1,  marginBottom: 3 }} label="programming"  />
         <Stack direction={"row"} justifyContent={"start"} alignItems={"center"} spacing={1} >
             <CalendarMonthIcon/>
             <Typography variant="body1"  fontSize={"0.775rem"} color={"rgb(42, 53, 71)"} fontWeight={400}  >Nov, 11, 2023</Typography>

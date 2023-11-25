@@ -3,7 +3,6 @@ import { blue } from "@mui/material/colors";
 import React, { useState } from "react";
 import StyledChip from "../components/StyledChip";
 import { useNavigate } from "react-router-dom";
-import StypedSmallChip from "../components/StypedSmallChip";
 
 export default function BlogDetails(){
 
@@ -24,7 +23,7 @@ export default function BlogDetails(){
 
                 {/* <StypedSmallChip label="programming"  /> */}
 
-                <Typography variant="h4" fontWeight={"700"} marginBottom={"4px"}>Streaming video way before it was cool, go dark tomorrow</Typography>
+                <Typography variant="h4" fontWeight={"600"} marginBottom={"4px"}>Streaming video way before it was cool, go dark tomorrow</Typography>
                 <StyledChip sx={{ fontSize: "12px", p: 1}} label="Frontend Development" onClick= { () => navigate("/tags/frontend-development") } />
             </Box>
 
