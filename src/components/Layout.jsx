@@ -30,6 +30,7 @@ export default function Layout(props){
     };
   
     const onSelected = (index) => {
+      setMobileOpen(false);
       if(index !== selected){
         setSelected(index);
         if(index === 0){
