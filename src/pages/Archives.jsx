@@ -46,7 +46,7 @@ export default function Archives(){
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-            <Link href="#" underline="none" sx={{ 
+            <Link href="/posts/new-title" underline="none" sx={{ 
                 [`&:hover`]: {
                     color: "#ECAF72"
                 }
@@ -64,7 +64,7 @@ export default function Archives(){
           <TimelineDot />
         </TimelineSeparator>
         <TimelineContent>
-            <Link href="#" underline="none" sx={{ 
+            <Link href="/posts/new-title-2" underline="none" sx={{ 
                 [`&:hover`]: {
                     color: "#ECAF72"
                 }
