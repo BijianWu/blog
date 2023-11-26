@@ -1,28 +1,38 @@
 import { Stack, Typography } from "@mui/material";
 import StyledPageHeadingTypography from "../components/StyledPageHeadingTypography";
-
+import SettingsInputSvideoOutlinedIcon from '@mui/icons-material/SettingsInputSvideoOutlined';
+import StyledLinkTypography from "../components/StyledLinkTypography";
 export default function About(){
 
     return <>
         <StyledPageHeadingTypography>About</StyledPageHeadingTypography>
-        <Stack spacing={2}>
-            <Typography>Hi, I am Bijian</Typography>
+        <Stack spacing={3}>
+            <Stack direction={"row"} columnGap={1}>
+                <SettingsInputSvideoOutlinedIcon />
+                <Typography>Hi, I am Bijian and I am a Full-stack developer currently working on Hungrybear gaming</Typography>
+            </Stack>
 
-            <Typography>
-            I am proficient in different programming languages and APIs, have acquired relevant experience in software development using Visual Studio particularly C#, front-end web development using JavaScript, back-end development using Java, JavaScript, PHP and Python, game development in Unity and Unreal, 
-            </Typography>
+            <Stack direction={"row"} columnGap={1}>
+                <SettingsInputSvideoOutlinedIcon />
+                <Typography>Prevsiouly, I was a game developer with IGT(International Game Technology)</Typography>
+            </Stack>
 
-            <Typography>
-            have in-depth knowlege of MySql and MongoDb
-            </Typography>
+            <Stack direction={"row"} columnGap={1}>
+                <SettingsInputSvideoOutlinedIcon />
+                <Typography>I have had the experiences working in frontend, backen and game developments, and have developed varirity of different skills sets, both professionally and personally</Typography>
+            </Stack>
 
-            <Typography>
-            also have profound experiences in containerisation tools like Docker and Kubernetes.
-            </Typography>
+            <Stack direction={"row"} columnGap={1}>
+                <SettingsInputSvideoOutlinedIcon />
+                <Typography>I have also developed few hobby projects randing from games to apps, my porfolio link</Typography>  <StyledLinkTypography>https://bijianwu.github.io/portfolio/</StyledLinkTypography>
+            </Stack>
 
-            <Typography>
-            I am a very enthusiastic and hardworking individual dedicated to high quality work produced timely meeting given deadlines and targets. In my free time I am always developing my skills, practising new ways of overcoming given tasks speedily and learning new related skills using online resources and other sources provided or offered at programming events.
-            </Typography>
+            <Stack direction={"row"} columnGap={1}>
+                <SettingsInputSvideoOutlinedIcon />
+                <Typography>I blog and share my programming expeirences at</Typography> <StyledLinkTypography>bijianwu.co.uk</StyledLinkTypography>
+            </Stack>
+
+
         </Stack>
 
     </>

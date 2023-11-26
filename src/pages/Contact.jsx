@@ -9,7 +9,7 @@ export default function Contact(){
     return <>
         <StyledPageHeadingTypography>Conact</StyledPageHeadingTypography>
 
-        <Stack spacing={2}>
+        <Stack spacing={3}>
             <Stack direction={"row"}>
                 <Typography  sx={{mr: 2}} >Email:</Typography>
                 <StyledLinkTypography >bijian1@hotmail.com</StyledLinkTypography>
