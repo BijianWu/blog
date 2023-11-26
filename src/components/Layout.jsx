@@ -1,5 +1,5 @@
 import { AppBar, Avatar, Box, Breadcrumbs, Container, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, MenuItem, Stack, Toolbar, Typography } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
@@ -23,8 +23,27 @@ export default function Layout(props){
     const navigate = useNavigate();
     const location = useLocation();
     const { postTitle, tagName } = useParams();
-    console.log(location.pathname)
 
+    const getSelectedBaseOnLocation = () =>{
+      const pathname = location.pathname;
+  
+      if(pathname === "/tags"){
+        return 1;
+      } else if(pathname === "/archives"){
+        return 2;
+      } else if(pathname === "/about"){
+        return 3;
+      } else if(pathname === "/contact"){
+        return 4;
+      }else if(pathname === "/"){
+        return 0;
+      }
+  
+      return -1;
+    }
+    useEffect(() => {
+      onSelected(getSelectedBaseOnLocation());
+    }, [location.pathname]);
     const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
     };
@@ -139,10 +158,6 @@ export default function Layout(props){
 
       </div>
     );
-    function handleClick(event) {
-        event.preventDefault();
-        console.info('You clicked a breadcrumb.');
-      }
 
     const container = window !== undefined ? () => window().document.body : undefined;
     // const breadcrumbs = [
