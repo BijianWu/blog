@@ -6,7 +6,8 @@ import { yellow } from '@mui/material/colors';
 
 export default function StypedSvgIcon () {
   return <>
-      <SvgIcon  sx={{color: yellow[800] }} fontSize="large">
+  {/* by adding borderBottom, it shifts the icon positioning and its size */}
+      <SvgIcon  sx={{color: yellow[800], borderBottom: "5px solid white" }} fontSize="large">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
