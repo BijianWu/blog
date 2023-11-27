@@ -4,7 +4,7 @@ import SettingsInputSvideoOutlinedIcon from '@mui/icons-material/SettingsInputSv
 import StyledLinkTypography from "../components/StyledLinkTypography";
 import { yellow } from "@mui/material/colors";
 import StypedSvgIcon from "../components/StypedSvgIcon";
-
+import {openInNewTab} from "../utils/navUtils";
 export default function About(){
 
     return <>
@@ -32,7 +32,7 @@ export default function About(){
 
             <Stack direction={"row"} columnGap={1}>
                 <StypedSvgIcon />
-                <Typography>I blog and share my programming expeirences at</Typography> <StyledLinkTypography>bijianwu.co.uk</StyledLinkTypography>
+                <Typography>I blog and share my programming expeirences at</Typography> <StyledLinkTypography onClick={ () => openInNewTab("https://bijianwu.github.io/portfolio/")}>bijianwu.co.uk</StyledLinkTypography>
             </Stack>
 
 
