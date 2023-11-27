@@ -27,12 +27,16 @@ export default function About(){
 
             <Stack direction={"row"} columnGap={1}>
                 <StypedSvgIcon />
-                <Typography>I have also developed few hobby projects randing from games to apps, my porfolio link</Typography>  <StyledLinkTypography onClick={ () => openInNewTab("https://bijianwu.github.io/portfolio/")} >https://bijianwu.github.io/portfolio/</StyledLinkTypography>
+                <Typography>I have also developed few hobby projects randing from games to apps, here is my
+                <StyledLinkTypography onClick={ () => openInNewTab("https://bijianwu.github.io/portfolio/")} > porfolio link </StyledLinkTypography>
+                </Typography> 
             </Stack>
 
             <Stack direction={"row"} columnGap={1}>
                 <StypedSvgIcon />
-                <Typography>I blog and share my programming expeirences at</Typography> <StyledLinkTypography onClick={ () => openInNewTab("https://bijianwu.github.io/portfolio/")}>bijianwu.co.uk</StyledLinkTypography>
+                <Typography>I blog and share my programming expeirences at  
+                    <StyledLinkTypography onClick={ () => openInNewTab("https://bijianwu.github.io/portfolio/")}> bijianwu.co.uk</StyledLinkTypography>
+                </Typography>
             </Stack>
 
 

@@ -7,23 +7,24 @@ import { openInMailApp, openInNewTab } from "../utils/navUtils";
 
 export default function Contact(){
 
+    const noWrapTextStyle = { textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap"  };
     return <>
         <StyledPageHeadingTypography>Conact</StyledPageHeadingTypography>
 
         <Stack spacing={3}>
             <Stack direction={"row"}>
                 <Typography  sx={{mr: 2}} >Email:</Typography>
-                <StyledLinkTypography onClick={ () => openInMailApp("bijian1@hotmail.com")}>bijian1@hotmail.com</StyledLinkTypography>
+                <StyledLinkTypography onClick={ () => openInMailApp("bijian1@hotmail.com")} sx={noWrapTextStyle}>bijian1@hotmail.com</StyledLinkTypography>
             </Stack>
 
             <Stack direction={"row"}>
                 <Typography  sx={{mr: 2}} >LinkedIn:</Typography>
-                <StyledLinkTypography onClick={ () => openInNewTab("https://www.linkedin.com/in/bijian-wu-4b01ba176")}>https://www.linkedin.com/in/bijian-wu-4b01ba176</StyledLinkTypography>
+                <StyledLinkTypography onClick={ () => openInNewTab("https://www.linkedin.com/in/bijian-wu-4b01ba176")} sx={noWrapTextStyle}>https://www.linkedin.com/in/bijian-wu-4b01ba176</StyledLinkTypography>
             </Stack>
 
             <Stack direction={"row"}>
                 <Typography  sx={{mr: 2}} >Portfolio:</Typography>
-                <StyledLinkTypography onClick={ () => openInNewTab("https://bijianwu.github.io/portfolio/")} >https://bijianwu.github.io/portfolio</StyledLinkTypography>
+                <StyledLinkTypography onClick={ () => openInNewTab("https://bijianwu.github.io/portfolio/")} sx={noWrapTextStyle}>https://bijianwu.github.io/portfolio</StyledLinkTypography>
             </Stack>
         </Stack>
 
