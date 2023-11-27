@@ -8,19 +8,20 @@ import TimelineOppositeContent, {
   timelineOppositeContentClasses,
 } from '@mui/lab/TimelineOppositeContent';
 import { Link, linkClasses } from '@mui/material';
+import StyledPageHeadingTypography from '../components/StyledPageHeadingTypography';
 
 
 export default function Archives(){
 
     return <>
-            <Timeline
-      sx={{
-        [`& .${timelineOppositeContentClasses.root}`]: {
-          flex: 1,
-        }
-
+      <StyledPageHeadingTypography>Archives</StyledPageHeadingTypography>
+      <Timeline
+        sx={{
+          [`& .${timelineOppositeContentClasses.root}`]: {
+            flex: 1,
+          }
       }}
-    >
+      >
 
      <TimelineItem >
         <TimelineOppositeContent sx={{ minHeight: "90px" }}  fontSize={30} fontWeight={"bold"}>

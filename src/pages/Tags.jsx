@@ -2,11 +2,13 @@ import { Badge, Box, Chip, Grid, Link, Stack, Typography } from "@mui/material";
 import StyledChip from "../components/StyledChip";
 import { useNavigate } from "react-router-dom";
 import MutedTypography from "../components/MutedTypography";
+import StyledPageHeadingTypography from "../components/StyledPageHeadingTypography";
 
 export default function Tags(){
     const navigate = useNavigate();
 
     return <>
+        <StyledPageHeadingTypography>Tags</StyledPageHeadingTypography>
         <Grid container rowGap={2} columnGap={3}>
             <Grid item lg={3} xs={5}>
                 <StyledChip label={
