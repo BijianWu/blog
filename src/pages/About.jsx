@@ -27,7 +27,7 @@ export default function About(){
 
             <Stack direction={"row"} columnGap={1}>
                 <StypedSvgIcon />
-                <Typography>I have also developed few hobby projects randing from games to apps, my porfolio link</Typography>  <StyledLinkTypography>https://bijianwu.github.io/portfolio/</StyledLinkTypography>
+                <Typography>I have also developed few hobby projects randing from games to apps, my porfolio link</Typography>  <StyledLinkTypography onClick={ () => openInNewTab("https://bijianwu.github.io/portfolio/")} >https://bijianwu.github.io/portfolio/</StyledLinkTypography>
             </Stack>
 
             <Stack direction={"row"} columnGap={1}>
