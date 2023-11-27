@@ -181,52 +181,52 @@ export default function Layout(props){
     const getBreadcrumbs = () => {
       if(location.pathname.endsWith("tags")){
         return [
-          <StyledTypography   underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
+          <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
-          <StyledDisabledTypography key="3" color="text.primary">
+          <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="3" color="text.primary">
           Tags
         </StyledDisabledTypography>,
         ]
       } else if(location.pathname.endsWith("archives")){
         return [
-          <StyledTypography  underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
+          <StyledTypography sx={{ fontSize: "0.9rem" }} underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
-          <StyledDisabledTypography key="3" color="text.primary">
+          <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="3" color="text.primary">
           Archives
         </StyledDisabledTypography>,
         ]
       } else if(location.pathname.endsWith("about")){
         return [
-          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
+          <StyledTypography sx={{ fontSize: "0.9rem" }} underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
-          <StyledDisabledTypography  key="3" color="text.primary">
+          <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="3" color="text.primary">
           About
         </StyledDisabledTypography>,
         ]
       } else if(location.pathname.endsWith("contact")){
         return [
-          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
+          <StyledTypography sx={{ fontSize: "0.9rem" }} underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
-          <StyledDisabledTypography key="3" color="text.primary">
+          <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="3" color="text.primary">
           Contact
         </StyledDisabledTypography>,
         ]
       } else if(location.pathname.includes("posts")){
         return [
-          <StyledTypography underline="hover" key="1" color="inherit" href="/"onClick={() => navigate("/")}>
+          <StyledTypography sx={{ fontSize: "0.9rem" }} underline="hover" key="1" color="inherit" href="/"onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
-          <StyledDisabledTypography key="3" color="text.primary">
+          <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="3" color="text.primary">
           {postTitle}
         </StyledDisabledTypography>,
         ]
       }else if(location.pathname.includes("tags/")){
         return [
-          <StyledTypography underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
+          <StyledTypography sx={{ fontSize: "0.9rem" }} underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
           </StyledTypography>,
           <StyledTypography
@@ -234,16 +234,17 @@ export default function Layout(props){
             key="2"
             color="inherit"
             onClick={() => navigate("/tags")}
+            sx={{ fontSize: "0.9rem" }}
           >
             Tags
           </StyledTypography>,
-          <StyledDisabledTypography key="3" color="text.primary">
+          <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="3" color="text.primary">
           {tagName}
         </StyledDisabledTypography>,
         ]
       }else {
         return [
-          <StyledDisabledTypography key="3" color="text.primary">
+          <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="3" color="text.primary">
           Home
           </StyledDisabledTypography>,
         ]
