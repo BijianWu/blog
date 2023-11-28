@@ -7,10 +7,10 @@ import BridgeDesignPatternBlogPost from "../pages/blogs/november_28_2023/BridgeD
 
 export default function BlogPosts(){
     const theme = useTheme();
+    const lgMatches = useMediaQuery(theme.breakpoints.up('lg'));
     const mdMatches = useMediaQuery(theme.breakpoints.up('md'));
-
     return <>
-    <Grid container spacing={mdMatches ? 10 : 5}>
+    <Grid container spacing={lgMatches ? 10 : 3}>
         <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
             <BridgeDesignPatternBlogPost />
         </Grid>

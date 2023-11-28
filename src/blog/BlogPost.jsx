@@ -9,11 +9,11 @@ export default function BlogPost({imageUrl, title, dateString, route}){
     const navigate = useNavigate();
     return <>
 
-    <Card onClick={ () => navigate(`posts/${route}`) } elevation={1} sx={{  transition: "transform 0.3s ease-in-out", "&:hover": { transform: "scale3d(1.05, 1.05, 1)", boxShadow: "rgba(236, 175, 114, 1) 0px 0px 8px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px" },     maxWidth: 360, borderRadius: 1, transition: "box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms", boxShadow: "rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px" }}>
+    <Card onClick={ () => navigate(`posts/${route}`) } elevation={1} sx={{  minWidth: "90%" ,transition: "transform 0.3s ease-in-out", "&:hover": { transform: "scale3d(1.05, 1.05, 1)", boxShadow: "rgba(236, 175, 114, 1) 0px 0px 8px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px" },     maxWidth: 400, borderRadius: 1, transition: "box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms", boxShadow: "rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px" }}>
       <CardMedia
         sx={{ height: 250 }}
         image={imageUrl}
-        title="open book"
+        title={title}
       />
       <CardContent sx={{ p: 4 }}>
         {/* <Chip label="programming" sx={{ height:"24px",  marginTop: -1,  marginBottom: 2,  color: "rgb(42, 53, 71)", fontWeight:"600", display: "inline-flex", alignItems: "center", justifyContent: "center", '& .MuiChip-label': {paddingLeft: 1, paddingRight: 1, fontSize: "12px", height: "18px", verticalAlign: "center"}}}  /> */}
