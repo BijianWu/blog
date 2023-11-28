@@ -13,6 +13,7 @@ import ContactsIcon from '@mui/icons-material/Contacts';
 import { blue } from "@mui/material/colors";
 import StyledTypography from "../components/StyledTypography";
 import StyledDisabledTypography from "./StyledDisabledTypography";
+import { removeDashWithSpaceAndCapFirstLetter } from "../utils/textConverterUtils";
 const drawerWidth = 240;
 const navButtonRadius = 2;
 
@@ -221,7 +222,7 @@ export default function Layout(props){
           Home
           </StyledTypography>,
           <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="3" color="text.primary">
-          {postTitle}
+          {removeDashWithSpaceAndCapFirstLetter(postTitle)}
         </StyledDisabledTypography>,
         ]
       }else if(location.pathname.includes("tags/")){
@@ -239,7 +240,7 @@ export default function Layout(props){
             Tags
           </StyledTypography>,
           <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="3" color="text.primary">
-          {tagName}
+          {removeDashWithSpaceAndCapFirstLetter(tagName)}
         </StyledDisabledTypography>,
         ]
       }else {

@@ -2,11 +2,12 @@ import { Chip, Grid, Link, List, ListItem, Typography } from "@mui/material";
 import StyledChip from "../components/StyledChip";
 import { useNavigate, useParams } from "react-router-dom";
 import StyledTypography from "../components/StyledTypography";
+import { removeDashWithSpaceAndCapFirstLetter } from "../utils/textConverterUtils";
 
 export default function TagDetails(){
     const { tagName } = useParams();
-    const replaceDashTagName = tagName.replace("-", " ");
-    const convertedTagName = replaceDashTagName.charAt(0).toUpperCase() + replaceDashTagName.slice(1)
+
+    const convertedTagName = removeDashWithSpaceAndCapFirstLetter(tagName);
     const navigate = useNavigate();
 
     return <>
