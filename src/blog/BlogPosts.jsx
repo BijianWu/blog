@@ -13,11 +13,12 @@ export default function BlogPosts(){
     return <>
     <Grid container spacing={lgMatches ? 10 : 3}>
         <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
-            <SingleResponsibilityBlogPost />
-        </Grid>
-        <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
             <BridgeDesignPatternBlogPost />
         </Grid>
+        <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
+            <SingleResponsibilityBlogPost />
+        </Grid>
+
         {/* <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
             <BridgeDesignPatternBlogPost />
         </Grid> */}
