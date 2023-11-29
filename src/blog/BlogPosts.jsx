@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import BlogPost from "./BlogPost";
 import BridgeDesignPattern from "../pages/blogs/november_28_2023/BridgeDesignPatternBlogDetails";
 import BridgeDesignPatternBlogPost from "../pages/blogs/november_28_2023/BridgeDesignPatternBlogPost";
+import SingleResponsibilityBlogPost from "../pages/blogs/november_29_2023/SingleResponsibilityBlogPost";
 
 export default function BlogPosts(){
     const theme = useTheme();
@@ -12,14 +13,14 @@ export default function BlogPosts(){
     return <>
     <Grid container spacing={lgMatches ? 10 : 3}>
         <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
-            <BridgeDesignPatternBlogPost />
+            <SingleResponsibilityBlogPost />
         </Grid>
         <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
             <BridgeDesignPatternBlogPost />
         </Grid>
-        <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
+        {/* <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
             <BridgeDesignPatternBlogPost />
-        </Grid>
+        </Grid> */}
         {/* <Grid item xl={4} md={6} xs={12} display={"flex"} justifyContent={"center"} alignItems={"center"}>
             <BlogPost />
         </Grid>

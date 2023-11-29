@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import StyledChip from "../components/StyledChip";
 import { useNavigate } from "react-router-dom";
 
+// not being used at all, but kept as a reference
 export default function BlogDetails({imageUrl, title, dateString, tagLabel, tagUrl, mainContent }){
 
     const navigate = useNavigate();

@@ -14,7 +14,24 @@ export default function Tags(){
         <Grid container rowGap={2} columnGap={3}   direction={ mdMatches ? "row" : "column"}
   alignItems="center"
   justifyContent="center">
+                <Grid item lg={3} md={5} xs={12}>
+                <StyledChip label={
+                    <Stack direction={"row"}>
+                        Programming principle <MutedTypography>1</MutedTypography>
+                    </Stack>
+                    
+                } onClick= { () => navigate("programming-principle") } />
+            </Grid>
+
             <Grid item lg={3} md={5} xs={12}>
+                <StyledChip label={
+                    <Stack direction={"row"}>
+                        Design pattern <MutedTypography>1</MutedTypography>
+                    </Stack>
+                } onClick= { () => navigate("design-pattern") } />
+            </Grid>
+
+            {/* <Grid item lg={3} md={5} xs={12}>
                 <StyledChip label={
                     <Stack direction={"row"}>
                         Game Development <MutedTypography>1</MutedTypography>
@@ -53,7 +70,7 @@ export default function Tags(){
                         Programming technique <MutedTypography>2</MutedTypography>
                     </Stack>
                 } onClick= { () => navigate("programming-technique") } />
-            </Grid>
+            </Grid> */}
 
         </Grid>
 

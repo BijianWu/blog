@@ -11,7 +11,7 @@ import Tags from "./pages/Tags";
 import Archives from "./pages/Archives";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import TagDetails from "./pages/TagDetails";
+import TagDetailsRouter from "./pages/TagDetailsRouter";
 import EmptyLayout from "./pages/EmptyLayout";
 import BlogDetailsRouter from "./blog/BlogDetailsRouter";
 
@@ -25,7 +25,7 @@ export default function App(){
                     <Route path="posts/:postTitle" element={<BlogDetailsRouter/>} />
                     <Route path="tags" element={<EmptyLayout />} >
                         <Route index element={<Tags />} />
-                        <Route path=":tagName" element={<TagDetails />} />
+                        <Route path=":tagName" element={<TagDetailsRouter />} />
                     </Route>
                     <Route path="archives" element={<Archives/>} />
                     <Route path="about" element={<About/>} />
