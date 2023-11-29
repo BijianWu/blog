@@ -13,7 +13,7 @@ export default function BlogDetails({imageUrl, title, dateString, tagLabel, tagU
 
 
         <Paper sx={{  borderRadius: 3 }} elevation={2}>
-            <img style={{objectFit: "fill", minHeight: "200px", width: "100%", aspectRatio: 2.5, borderTopLeftRadius: 6, borderTopRightRadius: 6}} src={imageUrl} alt=""/>
+            <img style={{objectFit: "cover", minHeight: "200px", width: "100%", aspectRatio: 2.5, borderTopLeftRadius: 6, borderTopRightRadius: 6}} src={imageUrl} alt=""/>
             <Box sx={{ py: 3, px: 3 }}>
 
 
