@@ -10,7 +10,7 @@ import TimelineOppositeContent, {
 import { Link, linkClasses } from '@mui/material';
 import StyledPageHeadingTypography from '../components/StyledPageHeadingTypography';
 
-
+// TODO: refactor single section into a class or a function, so keep the duplication to minimal
 export default function Archives(){
 
     return <>
