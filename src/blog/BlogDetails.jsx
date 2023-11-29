@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import StyledChip from "../components/StyledChip";
 import { useNavigate } from "react-router-dom";
 
-export default function BlogDetails({imageUrl, title, dateString, mainContent }){
+export default function BlogDetails({imageUrl, title, dateString, tagLabel, tagUrl, mainContent }){
 
     const navigate = useNavigate();
     console.log(dateString);
@@ -19,7 +19,8 @@ export default function BlogDetails({imageUrl, title, dateString, mainContent })
                 {/* <StypedSmallChip label="programming"  /> */}
 
                 <Typography variant="h4" fontWeight={"600"} marginBottom={"4px"}>{title}</Typography>
-                <StyledChip sx={{ fontSize: "12px", p: 1}} label="Frontend Development" onClick= { () => navigate("/tags/frontend-development") } />
+                <StyledChip sx={{ fontSize: "12px", p: 1}} label={tagLabel} onClick= { () => navigate(tagUrl) } />
+                <Typography mt={1}>posted on <Typography component={"span"} fontWeight={600} >{dateString}</Typography></Typography>
             </Box>
 
 
