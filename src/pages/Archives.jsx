@@ -9,6 +9,7 @@ import TimelineOppositeContent, {
 } from '@mui/lab/TimelineOppositeContent';
 import { Link, linkClasses } from '@mui/material';
 import StyledPageHeadingTypography from '../components/StyledPageHeadingTypography';
+import StyledTimelineItem from '../components/StyledTimelineItem';
 
 // TODO: refactor single section into a class or a function, so keep the duplication to minimal
 export default function Archives(){
@@ -38,42 +39,9 @@ export default function Archives(){
         </TimelineContent>
       </TimelineItem>
 
-      <TimelineItem >
-        <TimelineOppositeContent color="textSecondary">
-          21 Nov
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-            <Link href="/posts/new-title" underline="none" sx={{ 
-                [`&:hover`]: {
-                    color: "#ECAF72"
-                }
-            }}>
-                My second writing title
-            </Link>
-        </TimelineContent>
-      </TimelineItem>
+      <StyledTimelineItem dateString={"6 Dec"} targteUrl={"/posts/bridge-design-pattern"} title={"Bridge design pattern"} />
+      <StyledTimelineItem dateString={"29 Nov"} targteUrl={"/posts/single-responsibility"} title={"Single responsibility"} />
 
-      <TimelineItem>
-        <TimelineOppositeContent color="textSecondary">
-            20 Nov
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot />
-        </TimelineSeparator>
-        <TimelineContent>
-            <Link href="/posts/new-title-2" underline="none" sx={{ 
-                [`&:hover`]: {
-                    color: "#ECAF72"
-                }
-            }}>
-                My first writing title
-            </Link>
-        </TimelineContent>
-      </TimelineItem>
 
     </Timeline>
     </>
