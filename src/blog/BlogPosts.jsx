@@ -18,7 +18,12 @@ export default function BlogPosts(){
         <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
             <SingleResponsibilityBlogPost />
         </Grid>
-
+        <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
+            <SingleResponsibilityBlogPost />
+        </Grid>
+        <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
+            <SingleResponsibilityBlogPost />
+        </Grid>
         {/* <Grid item xl={4} md={6} xs={12} display={mdMatches ? "" : "flex"} justifyContent={"center"} alignItems={"center"}>
             <BridgeDesignPatternBlogPost />
         </Grid> */}

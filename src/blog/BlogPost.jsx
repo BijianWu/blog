@@ -1,17 +1,17 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Chip, Container, Paper, Stack, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, Chip, Container, Paper, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React, { useState } from "react";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { useNavigate } from "react-router-dom";
-import StypedSmallChip from "../components/StypedSmallChip";
 import StypedDisplayOnlySmallChip from "../components/StypedDisplayOnlySmallChip";
 
 export default function BlogPost({imageUrl, title, dateString, tagLabel, route}){
     const navigate = useNavigate();
+    const mdMatches = useMediaQuery('(min-width:500px)');
     return <>
 
     <Card onClick={ () => navigate(`posts/${route}`) } elevation={1} sx={{  minWidth: "90%" ,transition: "transform 0.3s ease-in-out, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms", "&:hover": { transform: "scale3d(1.05, 1.05, 1)", boxShadow: "rgba(236, 175, 114, 1) 0px 0px 8px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px" },     maxWidth: 400, borderRadius: 1, boxShadow: "rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px" }}>
       <CardMedia
-        sx={{ height: 250 }}
+        sx={{ height: mdMatches ? 240 : 150 }}
         image={imageUrl}
         title={title}
       />
