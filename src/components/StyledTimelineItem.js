@@ -11,7 +11,8 @@ export default function StyledTimelineItem({dateString, targteUrl, title}){
             <TimelineDot />
             <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>
+            {/* , whiteSpace: "nowrap", apply this to below will make the text don't wrap if there is no enough spaces*/}
+            <TimelineContent sx={{overflow: "hidden", textOverflow: "ellipsis"}}>
                 <Link href={targteUrl} underline="none" sx={{ 
                     [`&:hover`]: {
                         color: "#ECAF72"

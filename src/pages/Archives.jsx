@@ -25,7 +25,7 @@ export default function Archives(){
       >
 
      <TimelineItem >
-        <TimelineOppositeContent sx={{ minHeight: "90px" }}  fontSize={30} fontWeight={"bold"}>
+        <TimelineOppositeContent sx={{ minHeight: "90px" }}  fontSize={"1.5rem"} fontWeight={"bold"}>
             2023
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -34,7 +34,7 @@ export default function Archives(){
           
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>
+        <TimelineContent sx={{overflow: "clip"}}>
 
         </TimelineContent>
       </TimelineItem>

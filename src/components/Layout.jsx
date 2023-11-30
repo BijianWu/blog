@@ -14,9 +14,9 @@ import { blue } from "@mui/material/colors";
 import StyledTypography from "../components/StyledTypography";
 import StyledDisabledTypography from "./StyledDisabledTypography";
 import { removeDashWithSpaceAndCapFirstLetter } from "../utils/textConverterUtils";
+
 const drawerWidth = 240;
 const navButtonRadius = 2;
-
 export default function Layout(props){
     const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -323,7 +323,7 @@ export default function Layout(props){
             </Toolbar>
         </Box>
 
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{p: 0}}>
                 <Outlet />
             </Container>
             
