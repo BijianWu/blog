@@ -1,6 +1,19 @@
-import { Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import BlogDetails from "../../../blog/BlogDetails";
+import { CopyBlock, CodeBlock, dracula,github,atomOneDark,androidstudio,paraisoDark ,rainbow,Code } from 'react-code-blocks';
 
+const code = `@RequestMapping("/commitId")
+public Map<String, String> getCommitId() {
+    Map<String, String> result = new HashMap<>();
+    result.put("Commit message",gitProperties.getCommitId());
+    result.put("Commit branch", gitProperties.getBranch());
+    result.put("Commit id", gitProperties.getShortCommitId());
+    result.put("Commit time", gitProperties.getCommitTime() + "");
+    return result;
+}`;
+const language = "java";
+const showLineNumbers = true;
+const stylesRecord = {"display": "grid"};
 export default function SingleResponsibilityBlogDetails(){
     // https://pixabay.com/photos/tree-clouds-field-grass-meadow-736887/
     return <>
@@ -23,6 +36,20 @@ export default function SingleResponsibilityBlogDetails(){
                 <Typography paragraph>
                     Let's say you are working on a game, where the game contains so many different types of enemies, flying type enemy, ground type enemy
                 </Typography>
+{/* 
+                <Box sx= {{ width: "100%", overflowX: "scroll"}}>
+
+
+                </Box> */}
+                    <CopyBlock
+                    customStyle={stylesRecord}
+                            text={code}
+                            language={language}
+                            showLineNumbers={showLineNumbers}
+                            wrapLines={true}
+                            theme={atomOneDark}
+                        />
+
             </>}
         >
         </BlogDetails>
