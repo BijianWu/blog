@@ -13,7 +13,7 @@ public Map<String, String> getCommitId() {
 }`;
 const language = "java";
 const showLineNumbers = true;
-const stylesRecord = {"display": "grid"};
+const stylesRecord = {"display": "grid"}; // what a magic display grid, which fixes the weired width issues on smaller screens
 export default function SingleResponsibilityBlogDetails(){
     // https://pixabay.com/photos/tree-clouds-field-grass-meadow-736887/
     return <>
