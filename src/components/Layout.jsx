@@ -290,50 +290,53 @@ export default function Layout(props){
         </Box>
         <Box
             component="main"
-            sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+            sx={{ display: "grid", minHeight: "100vh", gridTemplateRows: "1fr auto", flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
         >
             {/* <Toolbar /> */}
-            <Stack  sx={{minHeight: "85vh"}}>
-            <Box
+            <Stack  >
+              <Box
 
-            sx={{
-            bgcolor: "rgb(255, 255, 255)"
-            }}
-        >
-            <Toolbar sx= {{ alignItems: "start" }}>
-              <IconButton
-                  color="black"
-                  aria-label="open drawer"
-                  edge="start"
-                  onClick={handleDrawerToggle}
-                  sx={{ mr: 2, pt: "3px", display: { sm: 'none' } }}
-              >
-                  <MenuIcon  />
-              </IconButton>
-              {/* <Typography color={"black"} variant="h6" noWrap component="div">
-                  Responsive drawer
-              </Typography> */}
+              sx={{
+              bgcolor: "rgb(255, 255, 255)"
+              }}
+          >
+              <Toolbar sx= {{ alignItems: "start" }}>
+                <IconButton
+                    color="black"
+                    aria-label="open drawer"
+                    edge="start"
+                    onClick={handleDrawerToggle}
+                    sx={{ mr: 2, pt: "3px", display: { sm: 'none' } }}
+                >
+                    <MenuIcon  />
+                </IconButton>
+                {/* <Typography color={"black"} variant="h6" noWrap component="div">
+                    Responsive drawer
+                </Typography> */}
 
-              <Breadcrumbs
-                  separator="›"
-                  aria-label="breadcrumb"
-              >
-                  {getBreadcrumbs()}
-              </Breadcrumbs>
-            </Toolbar>
-        </Box>
+                <Breadcrumbs
+                    separator="›"
+                    aria-label="breadcrumb"
+                >
+                    {getBreadcrumbs()}
+                </Breadcrumbs>
+              </Toolbar>
+              </Box>
 
-            <Container maxWidth="lg" sx={{p: 0}}>
-                <Outlet />
-            </Container>
+              <Container maxWidth="lg" sx={{p: 0}}>
+                  <Outlet />
+              </Container>
             
-            <Box sx={{marginTop: "auto", py: 3}}>
-              <Divider />
-              <Typography paragraph my={2}>© {new Date().getFullYear()} Bijian Wu. Some rights reserved.</Typography>
-            </Box>
+
 
 
             </Stack>
+
+              <Box sx={{ mt: 5, gridRowStart: 2,
+  gridRowEnd: 3}}>
+                <Divider />
+                <Typography paragraph my={2}>© {new Date().getFullYear()} Bijian Wu. Some rights reserved.</Typography>
+              </Box>
         </Box>
         </Box>
 
