@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/blog/static/js/main.420c3bff.js",
+    "main.js": "/blog/static/js/main.a588173f.js",
     "react-syntax-highlighter/refractor-core-import.js": "/blog/static/js/react-syntax-highlighter/refractor-core-import.883f0b3d.chunk.js",
     "react-syntax-highlighter_languages_refractor_abap.js": "/blog/static/js/react-syntax-highlighter_languages_refractor_abap.d2f2e772.chunk.js",
     "react-syntax-highlighter_languages_refractor_abnf.js": "/blog/static/js/react-syntax-highlighter_languages_refractor_abnf.d64a8738.chunk.js",
@@ -283,7 +283,7 @@
     "static/media/single.jpg": "/blog/static/media/single.86094cecc0f90ea458d6.jpg",
     "static/media/bijian-wu.jpg": "/blog/static/media/bijian-wu.99171565efbc105508ec.jpg",
     "index.html": "/blog/index.html",
-    "main.420c3bff.js.map": "/blog/static/js/main.420c3bff.js.map",
+    "main.a588173f.js.map": "/blog/static/js/main.a588173f.js.map",
     "refractor-core-import.883f0b3d.chunk.js.map": "/blog/static/js/react-syntax-highlighter/refractor-core-import.883f0b3d.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.d2f2e772.chunk.js.map": "/blog/static/js/react-syntax-highlighter_languages_refractor_abap.d2f2e772.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abnf.d64a8738.chunk.js.map": "/blog/static/js/react-syntax-highlighter_languages_refractor_abnf.d64a8738.chunk.js.map",
@@ -564,6 +564,6 @@
     "react-syntax-highlighter_languages_refractor_zig.20e4772a.chunk.js.map": "/blog/static/js/react-syntax-highlighter_languages_refractor_zig.20e4772a.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.420c3bff.js"
+    "static/js/main.a588173f.js"
   ]
 }
