@@ -37,8 +37,8 @@ export default function About(){
 
             <Stack direction={mdMatches ? "row" : "column"} columnGap={1}>
                 <StypedSvgIcon />
-                <Typography>I blog and share my programming expeirences at  
-                    <StyledLinkTypography onClick={ () => openInNewTab("https://bijianwu.github.io/portfolio/")}> bijianwu.co.uk</StyledLinkTypography>
+                <Typography>I blog and share my programming expeirences in this blog site
+                    
                 </Typography>
             </Stack>
 
