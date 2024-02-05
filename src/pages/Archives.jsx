@@ -10,10 +10,12 @@ import TimelineOppositeContent, {
 import { Link, linkClasses } from '@mui/material';
 import StyledPageHeadingTypography from '../components/StyledPageHeadingTypography';
 import StyledTimelineItem from '../components/StyledTimelineItem';
+import { useFontSize } from '../utils/useFontSize';
 
 // TODO: refactor single section into a class or a function, so keep the duplication to minimal
 export default function Archives(){
-
+  const fontSize = useFontSize();
+  // fontSize={fontSize}
     return <>
       <StyledPageHeadingTypography>Archives</StyledPageHeadingTypography>
       <Timeline

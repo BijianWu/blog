@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 import MutedTypography from "../components/MutedTypography";
 import StyledPageHeadingTypography from "../components/StyledPageHeadingTypography";
 import { useTheme } from "@emotion/react";
+import { useFontSize } from "../utils/useFontSize";
 
 export default function Tags(){
+    const fontSize = useFontSize();
     const navigate = useNavigate();
     const theme = useTheme();
     const mdMatches = useMediaQuery(theme.breakpoints.up('md'));
@@ -16,7 +18,7 @@ export default function Tags(){
   justifyContent="center">
                 <Grid item lg={3} md={5} xs={12}>
                 <StyledChip label={
-                    <Stack direction={"row"}>
+                    <Stack direction={"row"} fontSize={fontSize}> 
                         Programming principle <MutedTypography>1</MutedTypography>
                     </Stack>
                     
@@ -25,7 +27,7 @@ export default function Tags(){
 
             <Grid item lg={3} md={5} xs={12}>
                 <StyledChip label={
-                    <Stack direction={"row"}>
+                    <Stack direction={"row"} fontSize={fontSize} >
                         Design pattern <MutedTypography>1</MutedTypography>
                     </Stack>
                 } onClick= { () => navigate("design-pattern") } />
