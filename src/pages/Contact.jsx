@@ -9,7 +9,7 @@ import { useTheme } from "@emotion/react";
 export default function Contact(){
     const theme = useTheme();
     const mdMatches = useMediaQuery(theme.breakpoints.up('md'));
-    const noWrapTextStyle = { textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap"  };
+    const noWrapTextStyle = { textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap", maxWidth: "80vw" };
     return <>
         <StyledPageHeadingTypography>Conact</StyledPageHeadingTypography>
 
