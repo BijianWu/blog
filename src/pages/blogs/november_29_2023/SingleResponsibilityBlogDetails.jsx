@@ -1,6 +1,7 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 import BlogDetails from "../../../blog/BlogDetails";
 import { CopyBlock, CodeBlock, dracula,github,atomOneDark,androidstudio,paraisoDark ,rainbow,Code } from 'react-code-blocks';
+import { useFontSize } from "../../../utils/useFontSize";
 
 const code = `@RequestMapping("/commitId")
 public Map<String, String> getCommitId() {
@@ -15,6 +16,9 @@ const language = "java";
 const showLineNumbers = true;
 const stylesRecord = {"display": "grid"}; // what a magic display grid, which fixes the weired width issues on smaller screens
 export default function SingleResponsibilityBlogDetails(){
+    // const theme = useTheme();
+    // const smMatches = useMediaQuery(theme.breakpoints.up('sm'));
+    const fontSize = useFontSize();
     // https://pixabay.com/photos/tree-clouds-field-grass-meadow-736887/
     return <>
         <BlogDetails imageUrl={require("../../../assets/images/single.jpg")} title={"Single responsibility"} dateString={"Nov, 29, 2023"}
@@ -23,7 +27,7 @@ export default function SingleResponsibilityBlogDetails(){
             mainContent={
             <>
                 <Typography variant="h6"  mb={1}>Overview</Typography>
-                <Typography paragraph fontSize={"0.9rem"} mb={6}>
+                <Typography paragraph fontSize={fontSize} mb={6}>
                     Single Responsibitiy is the first principle from SOILD, where it sets a best practice for how programmer should code. A class or a functon must not have
                     different reasons to change, it should do one thing well. What the one thing is depends on the context of the application you are working, thus every time you see an if and
                     else statement that does not mean the function breaks the Single responsibility principle. when you see your function does multiple things, the best thing you do is
@@ -33,7 +37,7 @@ export default function SingleResponsibilityBlogDetails(){
                 </Typography>
 
                 <Typography variant="h6"  mb={1}>Example</Typography>
-                <Typography paragraph fontSize={"0.9rem"}>
+                <Typography paragraph fontSize={fontSize}>
                     Let's say you are working on a game, where the game contains so many different types of enemies, flying type enemy, ground type enemy
                 </Typography>
 {/* 

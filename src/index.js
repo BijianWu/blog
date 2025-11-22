@@ -6,12 +6,12 @@ import App from "./App";
 // import '@fontsource/roboto/400.css';
 // import '@fontsource/roboto/500.css';
 // import '@fontsource/roboto/700.css';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-    <BrowserRouter>
+    <BrowserRouter basename="/blog">
         <App />
     </BrowserRouter>
 
