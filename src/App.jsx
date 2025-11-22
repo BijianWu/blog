@@ -14,6 +14,8 @@ import Contact from "./pages/Contact";
 import TagDetailsRouter from "./pages/TagDetailsRouter";
 import EmptyLayout from "./pages/EmptyLayout";
 import BlogDetailsRouter from "./blog/BlogDetailsRouter";
+import SingleResponsibilityBlogDetails from "./pages/blogs/november_29_2023/SingleResponsibilityBlogDetails";
+import BridgeDesignPatternBlogDetails from "./pages/blogs/november_28_2023/BridgeDesignPatternBlogDetails";
 
 export default function App(){
 
@@ -30,6 +32,13 @@ export default function App(){
                     <Route path="archives" element={<Archives/>} />
                     <Route path="about" element={<About/>} />
                     <Route path="contact" element={<Contact/>} />
+
+                    <Route path="tags/design-pattern/posts/bridge-design-pattern" element={<BridgeDesignPatternBlogDetails/>} />
+                    <Route path="tags/programming-principle/posts/single-responsibility" element={<SingleResponsibilityBlogDetails/>} />
+
+                    <Route path="archives/posts/bridge-design-pattern" element={<BridgeDesignPatternBlogDetails/>} />
+                    <Route path="archives/posts/single-responsibility" element={<SingleResponsibilityBlogDetails/>} />
+                    
                 </Route>
             </Routes>
 

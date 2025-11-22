@@ -15,7 +15,7 @@ export default function ProgrammingPrincipleTagDetails(){
         <StyledPageHeadingTypography>{convertedTagName}</StyledPageHeadingTypography>
         <List sx={{ listStyleType: 'disc' }}>
             <ListItem sx={{ display: 'list-item' }} >
-                <StyledTypography onClick={() => navigate("/posts/single-responsibility")}>Single responsibility</StyledTypography>............ Nov 29, 2022
+                <StyledTypography onClick={() => navigate("/tags/programming-principle/posts/single-responsibility")}>Single responsibility</StyledTypography>............ Nov 29, 2022
                 </ListItem>
 
         </List>

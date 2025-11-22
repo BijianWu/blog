@@ -15,7 +15,7 @@ export default function DesignPatternTagDetails(){
         <StyledPageHeadingTypography>{convertedTagName}</StyledPageHeadingTypography>
         <List sx={{ listStyleType: 'disc' }}>
             <ListItem sx={{ display: 'list-item' }} >
-                <StyledTypography onClick={() => navigate("/posts/bridge-design-pattern")}>Bridge design pattern</StyledTypography>............ Dec 6, 2022
+                <StyledTypography onClick={() => navigate("/tags/design-pattern/posts/bridge-design-pattern")}>Bridge design pattern</StyledTypography>............ Dec 6, 2022
                 </ListItem>
         </List>
     </>

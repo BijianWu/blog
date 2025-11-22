@@ -39,8 +39,8 @@ export default function Archives(){
         </TimelineContent>
       </TimelineItem>
 
-      <StyledTimelineItem dateString={"6 Dec"} targteUrl={"/posts/bridge-design-pattern"} title={"Bridge design pattern"} />
-      <StyledTimelineItem dateString={"29 Nov"} targteUrl={"/posts/single-responsibility"} title={"Single responsibility"} />
+      <StyledTimelineItem dateString={"6 Dec"} targteUrl={"/archives/posts/bridge-design-pattern"} title={"Bridge design pattern"} />
+      <StyledTimelineItem dateString={"29 Nov"} targteUrl={"/archives/posts/single-responsibility"} title={"Single responsibility"} />
 
 
     </Timeline>

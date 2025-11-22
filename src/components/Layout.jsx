@@ -179,8 +179,63 @@ export default function Layout(props){
     //     </Typography>,
     //   ];
 
+
     const getBreadcrumbs = () => {
-      if(location.pathname.endsWith("tags")){
+      if(location.pathname.endsWith("archives/posts/single-responsibility")){
+        return [
+          <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
+          Home
+          </StyledTypography>,
+          <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="2" olor="inherit" href="/" onClick={() => navigate("/archives")}>
+          Archives
+        </StyledTypography>,
+        <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="4" color="text.primary">
+          Single responsibility
+        </StyledDisabledTypography>,
+        ]
+      } else if(location.pathname.endsWith("archives/posts/bridge-design-pattern")){
+        return [
+          <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
+          Home
+          </StyledTypography>,
+          <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="2" olor="inherit" href="/" onClick={() => navigate("/archives")}>
+          Archives
+        </StyledTypography>,
+        <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="4" color="text.primary">
+          Bridge Design Pattern
+        </StyledDisabledTypography>,
+        ]
+      } else if(location.pathname.endsWith("tags/programming-principle/posts/single-responsibility")){
+        return [
+          <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
+          Home
+          </StyledTypography>,
+          <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="2" olor="inherit" href="/" onClick={() => navigate("/tags")}>
+          Tags
+        </StyledTypography>,
+        <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="3" olor="inherit" href="/" onClick={() => navigate("/tags/programming-principle")}>
+          Programming principle
+        </StyledTypography>,
+        <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="4" color="text.primary">
+          Single responsibility
+        </StyledDisabledTypography>,
+        ]
+      } else if(location.pathname.endsWith("tags/design-pattern/posts/bridge-design-pattern")){
+        return [
+          <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
+          Home
+          </StyledTypography>,
+          <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="2" olor="inherit" href="/" onClick={() => navigate("/tags")}>
+          Tags
+        </StyledTypography>,
+        <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="3" olor="inherit" href="/" onClick={() => navigate("/tags/design-pattern")}>
+          Design pattern
+        </StyledTypography>,
+        <StyledDisabledTypography sx={{ fontSize: "0.9rem" }} key="4" color="text.primary">
+          Single responsibility
+        </StyledDisabledTypography>,
+        ]
+      } else if(location.pathname.endsWith("tags")){
         return [
           <StyledTypography sx={{ fontSize: "0.9rem" }}  underline="hover" key="1" color="inherit" href="/" onClick={() => navigate("/")}>
           Home
