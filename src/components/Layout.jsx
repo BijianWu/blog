@@ -111,7 +111,7 @@ export default function Layout(props){
           {/* {['Home', 'Tags', 'Archives', 'About', 'Contact'].map((text, index) => (
 
           ))} */}
-          <ListItem  key={"Home"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={selected === 0} onClick={(e) => onSelected(0)}>
+          <ListItem  key={"Home"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={!location.pathname.includes("/tags") && !location.pathname.includes("/archives") && location.pathname.includes("/posts")} onClick={(e) => onSelected(0)}>
               <ListItemButton sx={{ borderRadius: navButtonRadius }}>
                 <ListItemIcon >
                   <HomeIcon />
@@ -120,7 +120,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Tags"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={selected === 1} onClick={(e) => onSelected(1)}>
+            <ListItem key={"Tags"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={location.pathname.includes("/tags")} onClick={(e) => onSelected(1)}>
               <ListItemButton sx={{ borderRadius: navButtonRadius }}>
                 <ListItemIcon>
                   <SellIcon />
@@ -129,7 +129,7 @@ export default function Layout(props){
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Archives"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={selected === 2} onClick={(e) => onSelected(2)}>
+            <ListItem key={"Archives"} sx={{ borderRadius: navButtonRadius }} disablePadding selected={location.pathname.includes("/archives")} onClick={(e) => onSelected(2)}>
               <ListItemButton sx={{ borderRadius: navButtonRadius }}>
                 <ListItemIcon>
                   <ArticleIcon />
